@@ -1,0 +1,137 @@
+:root{
+    --primary-color: hsl(0,0%,15%);
+    --secondary-color: hsl(0,0%,5%);
+    --tertiary-color: hsl(0,0%,85%);
+    --quaternary-color: hsl(50,100%,50%);
+    --grayish-color: hsl(0,0%,60%);
+
+    --down-arrow-bottom-position:24px;
+    --down-arrow-top-position:48px;
+    --project--transition-time:0.5s;
+}
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    text-align: center;
+    color: var(--tertiary-color);
+}
+.flex-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+
+}
+@keyframes down-arrow-animation {
+    0%   {bottom: var(--down-arrow-bottom-position);}
+    50%  {bottom: var(--down-arrow-top-position);}
+    100% {bottom: var(--down-arrow-bottom-position);}
+}
+@keyframes up-arrow-animation {
+    0%   {top: var(--down-arrow-bottom-position);}
+    50%  {top: var(--down-arrow-top-position);}
+    100% {top: var(--down-arrow-bottom-position);}
+}
+#down-arrow{
+    position: absolute;
+    bottom: var(--down-arrow-bottom-position);
+    font-size: 64px;
+    animation-name: down-arrow-animation;
+}
+#up-arrow{
+    top: var(--down-arrow-bottom-position);
+    animation-name: up-arrow-animation;
+}
+.arrow{
+    position: absolute;
+    font-size: 64px;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    color: var(--quaternary-color);
+
+}
+.arrow:hover{
+    cursor: pointer;
+}
+/* Home Display - First Container */
+#first-container{
+    background-color: var(--primary-color);
+}
+#first-container h1{
+    margin-top: 16px;
+    font-size: 48px;
+}
+#first-container #start-screen{
+    /* padding-bottom: 50px; */
+}
+#first-container #start-screen img{
+    border: 8px solid var(--secondary-color);
+    border-radius: 50%;
+    width: 400px;
+    height: 450px;
+}
+
+/*  Projects Display - Second Container */
+#second-container{
+    background-color: var(--primary-color);
+}
+#second-container h1{
+    font-size: 48px;
+    color: var(--quaternary-color);
+}
+#second-container a{
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    padding: 16px;
+    margin-bottom: 4px;
+    font-size: 32px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: color var(--project--transition-time), background-color var(--project--transition-time);
+}
+#second-container a:hover{
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+
+}
+#second-container p:hover{
+    color: var(--tertiary-color);
+    cursor: pointer;
+}
+#second-container #projects-screen{
+    background-color: var(--secondary-color);
+    color: var(--grayish-color);
+    padding: 48px 64px 32px;
+    border-radius: 8px;
+}
+#second-container .project{
+    margin: 24px 0;
+}
+/*  About Me Display - Third Container */
+#third-container{
+    background-color: var(--primary-color);
+}
+
+#third-container #about-me{
+    background-color: var(--tertiary-color);
+    height: 400px;
+    width: 300px;
+    border-radius: 8px;
+}
+
+/* Empty - Fourth Container */
+#fourth-container{
+    background-color: var(--grayish-color);
+}
+
+.hidden{
+    display: none;
+}
