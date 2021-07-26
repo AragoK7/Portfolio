@@ -13,7 +13,6 @@ clearArrows();
 const revealSection = function(entries, observer){
     const [entry] = entries;
     if(entry.isIntersecting){
-        console.log("isIntersecting", entry.target)
         clearArrows();
         const sectionArrows = [...entry.target.getElementsByClassName("arrow")];
         sectionArrows.forEach(arrow=>{
@@ -53,3 +52,57 @@ function toggleShowDescription(event){
     }
     return false;
 }
+
+////////////////////////////////////////
+// Slider animation
+const refContainer = document.getElementById("slider-refs");
+const btnLeft = document.getElementById("slider__btn--left");
+const btnRight = document.getElementById("slider__btn--right");
+const slides = document.querySelectorAll(".slide");
+const slidesLength = slides.length;
+let currentSlide = 0;
+(function createRefButtons(){
+    slides.forEach((slide,i)=>{
+        refContainer.insertAdjacentHTML("beforeend",
+        `<button class="slide-ref" data-slide="${i}">${slide.id}</button>`)
+    })
+})();
+const sliderRefButtons = [...document.getElementsByClassName("slide-ref")];
+function goToSlide(slideNumber){
+    const target = sliderRefButtons.filter((button)=>{
+        return button.dataset.slide == slideNumber; 
+    })[0];
+    changeActiveStyles(target);
+    slides.forEach((slide,i)=>{
+        slide.style.transform = `translateX(${100 * (i - slideNumber)}%)`;
+        // slide.classList.add("hidden");
+    })
+}
+refContainer.addEventListener("click",function(e){
+    const target = e.target;
+    if(target.classList.contains("slide-ref")){
+        currentSlide = target.dataset.slide;
+        goToSlide(currentSlide);
+
+    }
+})
+function changeActiveStyles(target){
+    removeActiveRefClass();
+    target.classList.add("active-ref");
+}
+function removeActiveRefClass(){
+    sliderRefButtons.forEach(button=>{
+        button.classList.remove("active-ref");
+    })
+}
+goToSlide(currentSlide);
+btnRight.addEventListener('click',()=>{
+    currentSlide != slidesLength - 1 ? currentSlide++: currentSlide = 0;
+    goToSlide(currentSlide);
+});
+btnLeft.addEventListener('click',()=>{
+    currentSlide != 0 ? currentSlide-- : currentSlide = slidesLength - 1;
+    goToSlide(currentSlide);
+});
+
+////////////////////////////////////////
