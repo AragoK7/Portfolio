@@ -1,4 +1,4 @@
-const sectionCount = document.getElementsByTagName("section").length;
+    const sectionCount = document.getElementsByTagName("section").length;
 const allSections = document.getElementsByTagName("section");
 const allArrows = document.getElementsByClassName("arrow");
 
@@ -106,3 +106,22 @@ btnLeft.addEventListener('click',()=>{
 });
 
 ////////////////////////////////////////
+// Circular anchors
+const socials = [...document.getElementsByClassName("social")];
+const socialsLength = socials.length;
+const angleChange = 360 / socialsLength;
+function toRadians (angle) {
+    return angle * (Math.PI/180);
+}
+socials.forEach((social,i)=>{
+    const degree = toRadians(i * angleChange);
+    const cos = Math.round(150 * Math.cos(degree));
+    const sin = Math.round(150 * Math.sin(degree));
+    social.style.transform = `translate(${sin - 32}px, ${-cos- 32}px)`;
+})
+function getBox(){
+    const style = getComputedStyle(document.querySelector(".social"));
+    console.log(style.width, style.height);
+}
+getBox();
+
