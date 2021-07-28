@@ -107,21 +107,28 @@ btnLeft.addEventListener('click',()=>{
 
 ////////////////////////////////////////
 // Circular anchors
-const socials = [...document.getElementsByClassName("social")];
+const socials = document.querySelectorAll(".social");
 const socialsLength = socials.length;
-const angleChange = 360 / socialsLength;
+const angleGap = 360 / socialsLength;
+let angleChange = 0;
 function toRadians (angle) {
     return angle * (Math.PI/180);
 }
-socials.forEach((social,i)=>{
-    const degree = toRadians(i * angleChange);
-    const cos = Math.round(150 * Math.cos(degree));
-    const sin = Math.round(150 * Math.sin(degree));
-    social.style.transform = `translate(${sin - 32}px, ${-cos- 32}px)`;
-})
-function getBox(){
-    const style = getComputedStyle(document.querySelector(".social"));
-    console.log(style.width, style.height);
+function updateCircle(){
+    socials.forEach((social,i)=>{
+        const offWidth = social.offsetWidth / 2;
+        const offHeight = social.offsetHeight / 2;
+        const degree = toRadians(i * angleGap + angleChange);
+        const cos = Math.round(150 * Math.cos(degree));
+        const sin = Math.round(150 * Math.sin(degree));
+        social.style.transform = 
+        `translate(${sin - offWidth}px, ${-cos - offHeight}px)`;
+    })
+    angleChange !== 359 ? angleChange++: angleChange = 0;
+    setTimeout(updateCircle, 200);
 }
-getBox();
+// Timeout because offsetWidth and offsetHeight return nonsensical values otherwise
+setTimeout(() => {
+        updateCircle();
+}, 100);
 
