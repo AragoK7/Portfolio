@@ -114,13 +114,18 @@ let angleChange = 0;
 function toRadians (angle) {
     return angle * (Math.PI/180);
 }
+function getRadius(){
+    return window.innerWidth < 550 ? 100 : 150 ; 
+}
+let circleRadius = getRadius();
+window.addEventListener("resize",() => circleRadius =  getRadius());
 function updateCircle(){
     socials.forEach((social,i)=>{
         const offWidth = social.offsetWidth / 2;
         const offHeight = social.offsetHeight / 2;
         const degree = toRadians(i * angleGap + angleChange);
-        const cos = Math.round(150 * Math.cos(degree));
-        const sin = Math.round(150 * Math.sin(degree));
+        const cos = Math.round(circleRadius * Math.cos(degree));
+        const sin = Math.round(circleRadius * Math.sin(degree));
         social.style.transform = 
         `translate(${sin - offWidth}px, ${-cos - offHeight}px)`;
     })
