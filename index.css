@@ -129,10 +129,11 @@ body{
 
 #third-container{
     background-color: var(--secondary-color);
+    flex-direction: column;
 }
 #third-container h1{
     color: var(--tertiary-color);
-    font-size: 32px;
+    font-size: 48px;
 }
 #third-container #about-me{
     position: relative;
@@ -234,3 +235,21 @@ body{
     font-size: 72px;
     transition: transform 0.6s;
 }
+
+
+@media screen and (max-width: 550px) {
+    #first-container #start-screen img{
+        border-width: 4px;
+        width: 300px;
+        height: 336px;
+    }
+    #second-container #projects-screen{
+        width: 100%;
+    }
+    #second-container h1{
+        font-size: 32px;
+    }
+    #third-container #about-me{
+        width: 100%;
+    }
+  }
