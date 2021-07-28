@@ -115,7 +115,7 @@ function toRadians (angle) {
     return angle * (Math.PI/180);
 }
 function getRadius(){
-    return window.innerWidth < 550 ? 100 : 150 ; 
+    return window.innerWidth < 720 ? 100 : 150 ; 
 }
 let circleRadius = getRadius();
 window.addEventListener("resize",() => circleRadius =  getRadius());
