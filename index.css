@@ -5,8 +5,8 @@
     --quaternary-color: hsl(50,100%,50%);
     --grayish-color: hsl(0,0%,60%);
 
-    --down-arrow-bottom-position:24px;
-    --down-arrow-top-position:48px;
+    --down-arrow-bottom-position:12px;
+    --down-arrow-top-position:24px;
 
     --time-half-second: 0.5s;
     --time-one-quarter-second: 0.25s;
@@ -239,6 +239,12 @@ body{
     font-size: 96px;
 }
 
+@media screen and (max-height: 720px) {
+    .arrow{
+        font-size: 36px;
+    }
+    
+}
 @media screen and (max-width: 550px) {
     #first-container #start-screen img{
         border-width: 4px;
