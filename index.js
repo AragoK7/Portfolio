@@ -63,8 +63,9 @@ const slidesLength = slides.length;
 let currentSlide = 0;
 (function createRefButtons(){
     slides.forEach((slide,i)=>{
+        const text = slide.id;
         refContainer.insertAdjacentHTML("beforeend",
-        `<button class="slide-ref" data-slide="${i}">${slide.id}</button>`)
+        `<button class="slide-ref dot-ref" data-slide="${i}"></button>`)
     })
 })();
 const sliderRefButtons = [...document.getElementsByClassName("slide-ref")];
@@ -75,7 +76,6 @@ function goToSlide(slideNumber){
     changeActiveStyles(target);
     slides.forEach((slide,i)=>{
         slide.style.transform = `translateX(${100 * (i - slideNumber)}%)`;
-        // slide.classList.add("hidden");
     })
 }
 refContainer.addEventListener("click",function(e){
@@ -83,7 +83,6 @@ refContainer.addEventListener("click",function(e){
     if(target.classList.contains("slide-ref")){
         currentSlide = target.dataset.slide;
         goToSlide(currentSlide);
-
     }
 })
 function changeActiveStyles(target){
@@ -114,11 +113,11 @@ let angleChange = 0;
 function toRadians (angle) {
     return angle * (Math.PI/180);
 }
-function getRadius(){
-    return window.innerWidth < 720 ? 100 : 150 ; 
+function getRadius(windowWidth){
+    return windowWidth < 720 ? 100 : 150 ; 
 }
-let circleRadius = getRadius();
-window.addEventListener("resize",() => circleRadius =  getRadius());
+let circleRadius = getRadius(window.innerWidth);
+window.addEventListener("resize",() => circleRadius =  getRadius(window.innerWidth));
 function updateCircle(){
     socials.forEach((social,i)=>{
         const offWidth = social.offsetWidth / 2;

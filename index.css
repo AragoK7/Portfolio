@@ -16,6 +16,8 @@
     
     /* Third Container */
     --button-width:30px;
+
+    
 }
 *,
 *::before,
@@ -62,7 +64,7 @@ body{
 }
 .arrow{
     position: absolute;
-    font-size: 64px;
+    font-size: 48px;
     animation-duration: 4s;
     animation-iteration-count: infinite;
     color: var(--quaternary-color);
@@ -103,7 +105,7 @@ body{
     margin-bottom: 4px;
     font-size: 32px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 4px;
     transition: color var(--time-half-second), background-color var(--time-half-second);
 }
 #second-container a:hover{
@@ -138,46 +140,51 @@ body{
 }
 #third-container #about-me{
     position: relative;
-    background-color: var(--primary-color);
     border-radius: 8px;
+    width: 700px;
 }
-#third-container a{
-    display: inline-block;
-    padding: 0;
-    margin: 0;
-    background-color: var(--primary-color);
-    background-color: red;
-    color: var(--grayish-color);
-    padding: 16px;
-    margin-bottom: 4px;
-    text-decoration: none;
-    border-radius: 5px;
+#third-container #slider-refs{
+    display: flex;
+    justify-content: center;
 }
-#third-container a:hover{
-    background-color: black;
-    color: var(--tertiary-color);
-    font-style: italic;
-
+#third-container .dot-ref{
+    background-color: var(--grayish-color);
+    border-width: 0;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin: 4px 4px;
+}
+#third-container .dot-ref:hover{
+background-color: var(--primary-color);
 }
 #third-container .active-ref{
     font-size: 30px;
-    color: var(--tertiary-color);
+    background-color: var(--quaternary-color);
 }
 #third-container #slider-wrapper{
-    position: relative;
-    height: 300px;
     color: var(--secondary-color);
+    height: 300px;
+    position: relative;
+    border-radius: 8px;
     overflow:hidden;   
 }
 #third-container #slider-content{
-    background-color: var(--grayish-color);
-    text-align: justify;
+    background-color: var(--primary-color);
     position: relative;
     color: white;
     width: 100%;
     height: 300px;
     overflow:hidden;
-
+}
+#third-container p{
+    text-align: justify;
+    
+}
+#third-container h3{
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 4px;
 }
 #third-container .slide{
     padding: 10px calc(var(--button-width) + 8px);
@@ -189,7 +196,7 @@ body{
 }
 
 #third-container .slider__btn{
-    background-color: var(--primary-color);
+    background-color: var(--grayish-color);
     border: 0;
     font-size: 24px;
     opacity: 0.75;
@@ -213,7 +220,7 @@ body{
 /* Empty - Fourth Container */
 
 #fourth-container{
-    background-color: var(--grayish-color);
+    background-color: var(--primary-color);
 }
 #fourth-container #socials{
     position: relative;
@@ -252,12 +259,12 @@ body{
     #second-container .project{
         margin: 12px 0;
     }
+    #third-container #about-me{
+        width: 100%;
+    }
     #third-container h1{
         font-size: 32px;
         margin-bottom: 16px;
-    }
-    #third-container #about-me{
-        width: 100%;
     }
     #fourth-container #socials{
         font-size: 48px;
@@ -265,6 +272,7 @@ body{
     #fourth-container a:hover{
         font-size: 64px;
     }
+    
 }
 @media screen and (max-width: 520px)  {
     #first-container #start-screen img{
@@ -282,7 +290,7 @@ body{
     }
     #third-container #slider-wrapper{
         height: 250px;   
-    }
+    }   
     #third-container #about-me{
         font-size: 14px;
     }
