@@ -2,7 +2,8 @@
     --primary-color: hsl(0,0%,15%);
     --secondary-color: hsl(0,0%,5%);
     --tertiary-color: hsl(0,0%,85%);
-    --quaternary-color-opacity-lower: hsla(50,100%,50%,0.75);
+    --quaternary-color-opacity-lower: hsla(50,100%,50%,0.5);
+    --quaternary-color-opacity-middle: hsla(50,100%,50%,0.75);
     --quaternary-color-opacity-full: hsla(50,100%,50%,1);
     --grayish-color: hsl(0,0%,60%);
 
@@ -72,7 +73,7 @@ body{
     animation-duration: 4s;
     animation-iteration-count: infinite;
     transition: color .25s;
-    color: var(--quaternary-color-opacity-lower);
+    color: var(--quaternary-color-opacity-middle);
 
 }
 .arrow:hover{
@@ -162,7 +163,7 @@ body{
     margin: 4px 4px;
 }
 #third-container .dot-ref:hover{
-background-color: var(--quaternary-color-opacity-lower);
+background-color: var(--quaternary-color-opacity-middle);
 }
 #third-container .active-ref{
     font-size: 30px;
@@ -178,7 +179,7 @@ background-color: var(--quaternary-color-opacity-lower);
 #third-container #slider-content{
     background-color: var(--primary-color);
     position: relative;
-    color: white;
+    color: var(--tertiary-color);
     width: 100%;
     height: inherit;
 }
@@ -207,19 +208,31 @@ background-color: var(--quaternary-color-opacity-lower);
     bottom: 0;
 }
 #third-container .slide{
-    padding: 16px calc(var(--button-width) + 8px) 16px;
+    padding: 0 8px 0 calc(var(--button-width) + 10px);
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: calc(100% - var(--button-width) - 2px);
+    height: 268px;
     overflow-y: auto;
-    top: 0;
+    top: 16px;
     left: 0;
     transition: transform .75s;
 }
-#third-container .slide::-webkit-scrollbar{
-    display: none;
+#third-container ::-webkit-scrollbar{
+    width: 6px;
 }
+#third-container ::-webkit-scrollbar-track{
+    background-color: var(--quaternary-color-opacity-lower);
+	border-radius: 10px;
+}
+#third-container ::-webkit-scrollbar-thumb{
+    background-color: var(--quaternary-color-opacity-middle);
+    opacity: .4;
+    border-radius: 4px;
 
+}
+#third-container ::-webkit-scrollbar-thumb:hover{
+    background: var(--quaternary-color-opacity-full);
+}
 #third-container .slider__btn{
     background-color: var(--grayish-color);
     border: 0;
@@ -256,7 +269,7 @@ background-color: var(--quaternary-color-opacity-lower);
     position: absolute;
     display: block;
     text-decoration: none;
-    color: var(--quaternary-color-opacity-lower);
+    color: var(--quaternary-color-opacity-middle);
     transition: transform 0.6s, font-size 0.5s;
 }
 #fourth-container a:hover{
@@ -316,6 +329,9 @@ background-color: var(--quaternary-color-opacity-lower);
     }
     #third-container #slider-wrapper{
         height: 250px;   
+    }
+    #third-container .slide{
+        height: 218px;
     }   
     #third-container #about-me{
         font-size: 14px;
