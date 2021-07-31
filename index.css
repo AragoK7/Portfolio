@@ -215,8 +215,6 @@ background-color: var(--quaternary-color-opacity-lower);
     top: 0;
     left: 0;
     transition: transform .75s;
-    /* scrollbar-width: none; */
-    /* -ms-overflow-style: none; */
 }
 #third-container .slide::-webkit-scrollbar{
     display: none;
@@ -232,7 +230,6 @@ background-color: var(--quaternary-color-opacity-lower);
     position: absolute;
     height: inherit;
     top: 0;
-    /* transition: background-color .5s, color .5s; */
     transition: opacity var(--time-one-quarter-second);
     z-index: 3;
 }
