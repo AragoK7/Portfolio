@@ -2,7 +2,8 @@
     --primary-color: hsl(0,0%,15%);
     --secondary-color: hsl(0,0%,5%);
     --tertiary-color: hsl(0,0%,85%);
-    --quaternary-color: hsl(50,100%,50%);
+    --quaternary-color-opacity-lower: hsla(50,100%,50%,0.75);
+    --quaternary-color-opacity-full: hsla(50,100%,50%,1);
     --grayish-color: hsl(0,0%,60%);
 
     --down-arrow-bottom-position:2px;
@@ -67,11 +68,13 @@ body{
     font-size: 48px;
     animation-duration: 4s;
     animation-iteration-count: infinite;
-    color: var(--quaternary-color);
+    transition: color .25s;
+    color: var(--quaternary-color-opacity-lower);
 
 }
 .arrow:hover{
     cursor: pointer;
+    color: var(--quaternary-color-opacity-full);
 }
 /* Home Display - First Container */
 #first-container{
@@ -95,7 +98,7 @@ body{
 }
 #second-container h1{
     font-size: 48px;
-    color: var(--quaternary-color);
+    color: var(--quaternary-color-opacity-full);
 }
 #second-container a{
     display: inline-block;
@@ -134,7 +137,7 @@ body{
     flex-direction: column;
 }
 #third-container h1{
-    color: var(--quaternary-color);
+    color: var(--quaternary-color-opacity-full);
     font-size: 48px;
     margin-bottom: 32px;
 }
@@ -156,18 +159,18 @@ body{
     margin: 4px 4px;
 }
 #third-container .dot-ref:hover{
-background-color: var(--primary-color);
+background-color: var(--quaternary-color-opacity-lower);
 }
 #third-container .active-ref{
     font-size: 30px;
-    background-color: var(--quaternary-color);
+    background-color: var(--quaternary-color-opacity-full);
 }
 #third-container #slider-wrapper{
     color: var(--secondary-color);
     height: 300px;
     position: relative;
     border-radius: 8px;
-    overflow:hidden;   
+    overflow: hidden;
 }
 #third-container #slider-content{
     background-color: var(--primary-color);
@@ -175,10 +178,10 @@ background-color: var(--primary-color);
     color: white;
     width: 100%;
     height: 300px;
-    overflow:hidden;
 }
 #third-container p{
     text-align: justify;
+    line-height: 1.4;
     
 }
 #third-container h3{
@@ -186,13 +189,34 @@ background-color: var(--primary-color);
     text-align: center;
     margin-bottom: 4px;
 }
+#third-container .padding{
+    position: absolute;
+    left: 0;
+    height: 16px;
+    width: 100%;
+    z-index: 2;
+    background-color: inherit;
+}
+#third-container .padding:first-of-type{
+    top: 0;
+}
+#third-container .padding:last-of-type{
+    bottom: 0;
+}
 #third-container .slide{
-    padding: 10px calc(var(--button-width) + 8px);
+    padding: 16px calc(var(--button-width) + 8px) 16px;
     position: absolute;
     width: 100%;
+    height: 100%;
+    overflow-y: auto;
     top: 0;
     left: 0;
     transition: transform .75s;
+    /* scrollbar-width: none; */
+    /* -ms-overflow-style: none; */
+}
+#third-container .slide::-webkit-scrollbar{
+    display: none;
 }
 
 #third-container .slider__btn{
@@ -200,13 +224,14 @@ background-color: var(--primary-color);
     border: 0;
     font-size: 24px;
     opacity: 0.75;
-    color: var(--quaternary-color);
+    color: var(--quaternary-color-opacity-full);
     width: var(--button-width);
     position: absolute;
     height: inherit;
     top: 0;
     /* transition: background-color .5s, color .5s; */
     transition: opacity var(--time-one-quarter-second);
+    z-index: 3;
 }
 #third-container #slider__btn--left{
     left: 0;   
@@ -231,11 +256,12 @@ background-color: var(--primary-color);
     position: absolute;
     display: block;
     text-decoration: none;
-    color: var(--quaternary-color);
+    color: var(--quaternary-color-opacity-lower);
     transition: transform 0.6s, font-size 0.5s;
 }
 #fourth-container a:hover{
     font-size: 96px;
+    color: var(--quaternary-color-opacity-full);
 }
 
 @media screen and (max-width: 720px) {

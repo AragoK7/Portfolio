@@ -1,4 +1,5 @@
-    const sectionCount = document.getElementsByTagName("section").length;
+console.log("loading script...");
+const sectionCount = document.getElementsByTagName("section").length;
 const allSections = document.getElementsByTagName("section");
 const allArrows = document.getElementsByClassName("arrow");
 
