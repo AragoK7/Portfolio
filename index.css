@@ -1,348 +1,378 @@
-:root{
-    --primary-color: hsl(0,0%,15%);
-    --secondary-color: hsl(0,0%,5%);
-    --tertiary-color: hsl(0,0%,85%);
-    --quaternary-color-opacity-lower: hsla(50,100%,50%,0.5);
-    --quaternary-color-opacity-middle: hsla(50,100%,50%,0.75);
-    --quaternary-color-opacity-full: hsla(50,100%,50%,1);
-    --grayish-color: hsl(0,0%,60%);
+:root {
+  --primary-color: hsl(0, 0%, 15%);
+  --secondary-color: hsl(0, 0%, 5%);
+  --tertiary-color: hsl(0, 0%, 85%);
+  --quaternary-color-opacity-lower: hsla(50, 100%, 50%, 0.5);
+  --quaternary-color-opacity-middle: hsla(50, 100%, 50%, 0.75);
+  --quaternary-color-opacity-full: hsla(50, 100%, 50%, 1);
+  --grayish-color: hsl(0, 0%, 60%);
 
-    --down-arrow-bottom-position:2px;
-    --down-arrow-top-position:14px;
+  --down-arrow-bottom-position: 2px;
+  --down-arrow-top-position: 14px;
 
-    --time-half-second: 0.5s;
-    --time-one-quarter-second: 0.25s;
-    
-    --secondary-color-alpha--before: hsla(0,0%,5%,0.5);
-    --secondary-color-alpha--after: hsla(0,0%,40%,0.5);
-    
+  --time-half-second: 0.5s;
+  --time-one-quarter-second: 0.25s;
 
-    /* font-family: Arial, Helvetica, sans-serif; */
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    /* Third Container */
-    --button-width:30px;
+  --secondary-color-alpha--before: hsla(0, 0%, 5%, 0.5);
+  --secondary-color-alpha--after: hsla(0, 0%, 40%, 0.5);
 
-    
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  /* Third Container */
+  --button-width: 30px;
 }
 *,
 *::before,
-*::after{
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    text-align: center;
-    color: var(--tertiary-color);
+body {
+  text-align: center;
+  color: var(--tertiary-color);
 }
-.flex-container{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    
+.flex-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
 }
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
 @keyframes down-arrow-animation {
-    0%   {bottom: var(--down-arrow-bottom-position);}
-    50%  {bottom: var(--down-arrow-top-position);}
-    100% {bottom: var(--down-arrow-bottom-position);}
+  0% {
+    bottom: var(--down-arrow-bottom-position);
+  }
+  50% {
+    bottom: var(--down-arrow-top-position);
+  }
+  100% {
+    bottom: var(--down-arrow-bottom-position);
+  }
 }
 @keyframes up-arrow-animation {
-    0%   {top: var(--down-arrow-bottom-position);}
-    50%  {top: var(--down-arrow-top-position);}
-    100% {top: var(--down-arrow-bottom-position);}
-}
-.down-arrow{
-    position: absolute;
-    bottom: var(--down-arrow-bottom-position);
-    font-size: 64px;
-    animation-name: down-arrow-animation;
-}
-.up-arrow{
+  0% {
     top: var(--down-arrow-bottom-position);
-    animation-name: up-arrow-animation;
+  }
+  50% {
+    top: var(--down-arrow-top-position);
+  }
+  100% {
+    top: var(--down-arrow-bottom-position);
+  }
 }
-.arrow{
-    position: absolute;
-    font-size: 48px;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    transition: color .25s;
-    color: var(--quaternary-color-opacity-middle);
+.down-arrow {
+  position: absolute;
+  bottom: var(--down-arrow-bottom-position);
+  font-size: 64px;
+  animation-name: down-arrow-animation;
+}
+.up-arrow {
+  top: var(--down-arrow-bottom-position);
+  animation-name: up-arrow-animation;
+}
+.arrow {
+  position: absolute;
+  font-size: 48px;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  transition: color 0.25s;
+  color: var(--quaternary-color-opacity-middle);
+}
+.arrow:hover {
+  cursor: pointer;
+  color: var(--quaternary-color-opacity-full);
+}
 
-}
-.arrow:hover{
-    cursor: pointer;
-    color: var(--quaternary-color-opacity-full);
-}
+/* /////////////////////////////////////////////////////////////////////////// */
 /* Home Display - First Container */
-#first-container{
-    background-color: var(--primary-color);
+
+#first-container {
+  background-color: var(--primary-color);
 }
-#first-container h1{
-    margin-top: 16px;
-    font-size: 48px;
+#first-container h1 {
+  margin-top: 16px;
+  font-size: 48px;
 }
 
-#first-container #start-screen img{
-    border: 8px solid var(--secondary-color);
-    border-radius: 50%;
-    width: 400px;
-    height: 450px;
+#first-container #start-screen img {
+  border: 8px solid var(--secondary-color);
+  border-radius: 50%;
+  width: 400px;
+  height: 450px;
 }
 
+/* /////////////////////////////////////////////////////////////////////////// */
 /*  Projects Display - Second Container */
-#second-container{
-    background-color: var(--primary-color);
-}
-#second-container h1{
-    font-size: 48px;
-    color: var(--quaternary-color-opacity-full);
-}
-#second-container a{
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: var(--tertiary-color);
-    padding: 16px;
-    margin-bottom: 4px;
-    font-size: 32px;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: color var(--time-half-second), background-color var(--time-half-second);
-}
-#second-container a:hover{
-    background-color: var(--tertiary-color);
-    color: var(--primary-color);
 
+#second-container {
+  background-color: var(--primary-color);
 }
-#second-container p:hover{
-    color: var(--tertiary-color);
-    cursor: pointer;
+#second-container h1 {
+  font-size: 48px;
+  color: var(--quaternary-color-opacity-full);
 }
-#second-container #projects-screen{
-    background-color: var(--secondary-color);
-    color: var(--grayish-color);
-    padding: 48px 64px 32px;
-    border-radius: 8px;
+#second-container a {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--tertiary-color);
+  padding: 16px;
+  margin-bottom: 4px;
+  font-size: 32px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: color var(--time-half-second),
+    background-color var(--time-half-second);
 }
-#second-container .project{
-    margin: 24px 0;
+#second-container a:hover {
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
+}
+#second-container p:hover {
+  color: var(--tertiary-color);
+  cursor: pointer;
+}
+#second-container #projects-screen {
+  background-color: var(--secondary-color);
+  color: var(--grayish-color);
+  padding: 48px 64px 32px;
+  border-radius: 8px;
+}
+#second-container .project {
+  margin: 24px 0;
 }
 
+/* /////////////////////////////////////////////////////////////////////////// */
 /*  About Me Display - Third Container */
 
-#third-container{
-    background-color: var(--secondary-color);
-    flex-direction: column;
+#third-container {
+  background-color: var(--secondary-color);
+  flex-direction: column;
 }
-#third-container h1{
-    color: var(--quaternary-color-opacity-full);
-    font-size: 48px;
-    margin-bottom: 32px;
+#third-container h1 {
+  color: var(--quaternary-color-opacity-full);
+  font-size: 48px;
+  margin-bottom: 32px;
 }
-#third-container #about-me{
-    position: relative;
-    border-radius: 8px;
-    width: 700px;
+#third-container #about-me {
+  position: relative;
+  border-radius: 8px;
+  width: 700px;
 }
-#third-container #slider-refs{
-    display: flex;
-    justify-content: center;
+#third-container #slider-refs {
+  display: flex;
+  justify-content: center;
 }
-#third-container .dot-ref{
-    background-color: var(--grayish-color);
-    border-width: 0;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    margin: 4px 4px;
+#third-container .dot-ref {
+  background-color: var(--grayish-color);
+  border-width: 0;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin: 4px 4px;
 }
-#third-container .dot-ref:hover{
-background-color: var(--quaternary-color-opacity-middle);
+#third-container .dot-ref:hover {
+  background-color: var(--quaternary-color-opacity-middle);
 }
-#third-container .active-ref{
-    font-size: 30px;
-    background-color: var(--quaternary-color-opacity-full);
+#third-container .active-ref {
+  font-size: 30px;
+  background-color: var(--quaternary-color-opacity-full);
 }
-#third-container #slider-wrapper{
-    color: var(--secondary-color);
-    height: 300px;
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
+#third-container #slider-wrapper {
+  color: var(--secondary-color);
+  height: 300px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
 }
-#third-container #slider-content{
-    background-color: var(--primary-color);
-    position: relative;
-    color: var(--tertiary-color);
-    width: 100%;
-    height: inherit;
+#third-container #slider-content {
+  background-color: var(--primary-color);
+  position: relative;
+  color: var(--tertiary-color);
+  width: 100%;
+  height: inherit;
 }
-#third-container p{
-    text-align: justify;
-    line-height: 1.4;
-    font-family: Arial, Helvetica, sans-serif;    
+#third-container p {
+  text-align: justify;
+  line-height: 1.4;
+  font-family: Arial, Helvetica, sans-serif;
 }
-#third-container h3{
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 4px;
+#third-container h3 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 4px;
 }
-#third-container .padding{
-    position: absolute;
-    left: 0;
-    height: 16px;
-    width: 100%;
-    z-index: 2;
-    background-color: inherit;
+#third-container .padding {
+  position: absolute;
+  left: 0;
+  height: 16px;
+  width: 100%;
+  z-index: 2;
+  background-color: inherit;
 }
-#third-container .padding:first-of-type{
-    top: 0;
+#third-container .padding:first-of-type {
+  top: 0;
 }
-#third-container .padding:last-of-type{
-    bottom: 0;
+#third-container .padding:last-of-type {
+  bottom: 0;
 }
-#third-container .slide{
-    padding: 0 8px 0 calc(var(--button-width) + 10px);
-    position: absolute;
-    width: calc(100% - var(--button-width) - 2px);
-    height: 268px;
-    overflow-y: auto;
-    top: 16px;
-    left: 0;
-    transition: transform .75s;
+#third-container .slide {
+  padding: 0 8px 0 calc(var(--button-width) + 10px);
+  position: absolute;
+  width: calc(100% - var(--button-width) - 2px);
+  height: 268px;
+  overflow-y: auto;
+  top: 16px;
+  left: 0;
+  transition: transform 0.75s;
 }
-#third-container ::-webkit-scrollbar{
-    width: 6px;
+#third-container ::-webkit-scrollbar {
+  width: 6px;
 }
-#third-container ::-webkit-scrollbar-track{
-    background-color: var(--quaternary-color-opacity-lower);
-	border-radius: 10px;
+#third-container ::-webkit-scrollbar-track {
+  background-color: var(--quaternary-color-opacity-lower);
+  border-radius: 10px;
 }
-#third-container ::-webkit-scrollbar-thumb{
-    background-color: var(--quaternary-color-opacity-middle);
-    opacity: .4;
-    border-radius: 4px;
-
+#third-container ::-webkit-scrollbar-thumb {
+  background-color: var(--quaternary-color-opacity-middle);
+  opacity: 0.4;
+  border-radius: 4px;
 }
-#third-container ::-webkit-scrollbar-thumb:hover{
-    background: var(--quaternary-color-opacity-full);
+#third-container ::-webkit-scrollbar-thumb:hover {
+  background: var(--quaternary-color-opacity-full);
 }
-#third-container .slider__btn{
-    background-color: var(--grayish-color);
-    border: 0;
-    font-size: 24px;
-    opacity: 0.75;
-    color: var(--quaternary-color-opacity-full);
-    width: var(--button-width);
-    position: absolute;
-    height: inherit;
-    top: 0;
-    transition: opacity var(--time-one-quarter-second);
-    z-index: 3;
+#third-container .slider__btn {
+  background-color: var(--grayish-color);
+  border: 0;
+  font-size: 24px;
+  opacity: 0.75;
+  color: var(--quaternary-color-opacity-full);
+  width: var(--button-width);
+  position: absolute;
+  height: inherit;
+  top: 0;
+  transition: opacity var(--time-one-quarter-second);
+  z-index: 3;
 }
-#third-container #slider__btn--left{
-    left: 0;   
+#third-container #slider__btn--left {
+  left: 0;
 }
-#third-container #slider__btn--right{
-    right: 0;
+#third-container #slider__btn--right {
+  right: 0;
 }
-#third-container .slider__btn:hover{
-    opacity: 1;
+#third-container .slider__btn:hover {
+  opacity: 1;
 }
+/* /////////////////////////////////////////////////////////////////////////// */
 /* Empty - Fourth Container */
 
-#fourth-container{
-    background-color: var(--primary-color);
+#fourth-container {
+  background-color: var(--primary-color);
 }
-#fourth-container #socials{
-    position: relative;
-    background-color: white;
-    font-size: 72px;
+#fourth-container #socials {
+  position: relative;
+  background-color: white;
+  font-size: 72px;
 }
-#fourth-container a{
-    position: absolute;
-    display: block;
-    text-decoration: none;
-    color: var(--quaternary-color-opacity-middle);
-    transition: transform 0.6s, font-size 0.5s;
+#fourth-container a {
+  position: absolute;
+  display: block;
+  text-decoration: none;
+  color: var(--quaternary-color-opacity-middle);
+  transition: transform 0.6s, font-size 0.5s;
 }
-#fourth-container a:hover{
-    font-size: 96px;
-    color: var(--quaternary-color-opacity-full);
+#fourth-container a:hover {
+  font-size: 96px;
+  color: var(--quaternary-color-opacity-full);
+}
+/* /////////////////////////////////////////////////////////////////////////// */
+/* Fifth Container Skillset */
+
+#fifth-container {
+  background-color: var(--secondary-color);
+  flex-direction: column;
+}
+#fifth-container h1 {
+  color: var(--quaternary-color-opacity-full);
+  font-size: 48px;
+  margin-bottom: 32px;
+}
+#fifth-container #skillset {
+  border-radius: 8px;
+  height: 400px;
+  width: 500px;
+  background-color: var(--primary-color);
 }
 
 @media screen and (max-width: 720px) {
-    .arrow{
-        font-size: 32px;
-    }
-    #first-container #start-screen img{
-        border-width: 4px;
-        width: 300px;
-        height: 336px;
-    }
-    #first-container h1{
-        margin-top: 4px;
-    }
-    #second-container #projects-screen{
-        width: 100%;
-    }
-    #second-container h1{
-        font-size: 32px;
-    }
-    #second-container .project{
-        margin: 12px 0;
-    }
-    #third-container #about-me{
-        width: 100%;
-    }
-    #third-container h1{
-        font-size: 32px;
-        margin-bottom: 16px;
-    }
-    #fourth-container #socials{
-        font-size: 48px;
-    }
-    #fourth-container a:hover{
-        font-size: 64px;
-    }
-    
+  .arrow {
+    font-size: 32px;
+  }
+  #first-container #start-screen img {
+    border-width: 4px;
+    width: 300px;
+    height: 336px;
+  }
+  #first-container h1 {
+    margin-top: 4px;
+  }
+  #second-container #projects-screen {
+    width: 100%;
+  }
+  #second-container h1 {
+    font-size: 32px;
+  }
+  #second-container .project {
+    margin: 12px 0;
+  }
+  #third-container #about-me {
+    width: 100%;
+  }
+  #third-container h1 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  #fourth-container #socials {
+    font-size: 48px;
+  }
+  #fourth-container a:hover {
+    font-size: 64px;
+  }
 }
-@media screen and (max-width: 520px)  {
-    #first-container #start-screen img{
-        width: 250px;
-        height: 282px;
-    }
-    #first-container h1{
-        font-size: 40px;
-    }
-    #second-container #projects-screen{
-        padding: 12px 64px 12px;
-    }
-    #third-container h1{
-        margin-bottom: 8px;
-    }
-    #third-container #slider-wrapper{
-        height: 250px;   
-    }
-    #third-container .slide{
-        height: 218px;
-    }   
-    #third-container #about-me{
-        font-size: 14px;
-    }
+@media screen and (max-width: 520px) {
+  #first-container #start-screen img {
+    width: 250px;
+    height: 282px;
+  }
+  #first-container h1 {
+    font-size: 40px;
+  }
+  #second-container #projects-screen {
+    padding: 12px 64px 12px;
+  }
+  #third-container h1 {
+    margin-bottom: 8px;
+  }
+  #third-container #slider-wrapper {
+    height: 250px;
+  }
+  #third-container .slide {
+    height: 218px;
+  }
+  #third-container #about-me {
+    font-size: 14px;
+  }
 }
 @media screen and (max-width: 420px) {
-    #first-container #start-screen img{
-        width: 200px;
-        height: 225px;
-    }
-    #first-container h1{
-        font-size: 32px;
-    }
+  #first-container #start-screen img {
+    width: 200px;
+    height: 225px;
+  }
+  #first-container h1 {
+    font-size: 32px;
+  }
 }

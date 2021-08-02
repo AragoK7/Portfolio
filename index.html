@@ -1,116 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Goran Cogic</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-</head>
-<body>
-    <noscript>Blin 123</noscript>    
-    <section id="first-container" class="flex-container section--1" data-id=1>
-        <div id="start-screen">
-            <img src="me.jpg" alt="">
-            <h1>Goran Cogic</h1>
-            <p>Web Developer</p>
-        </div>
-        
-        <i class="fas fa-arrow-circle-down arrow down-arrow" onclick="arrow(event,'down')"></i>
-    </section>
-    
-    <section id="second-container" class="flex-container section--2" data-id=2>
-        <div id="projects-screen">
-            <h1>MY PROJECTS</h1>
-            <div class="project">
-                <a href="https://aragok7-api-project.herokuapp.com/" target="_blank">Projekt API</a>
-                <p onclick="toggleShowDescription(event)">...show description...</p>
-                <p class="hidden">sdasdadas</p>
-            </div>
-            <div class="project">
-                <a href="https://aragok-gallery.netlify.app/" target="_blank">Projekt Gallery</a>
-                <p onclick="toggleShowDescription(event)">...show description...</p>
-                <p class="hidden">ayayay</p>
-            </div>
-            <div class="project">
-                <a href="https://aragok-news.herokuapp.com/" target="_blank">Projekt News</a>
-                <p onclick="toggleShowDescription(event)">...show description...</p>
-                <p class="hidden">ayayay</p>
-            </div>
-        </div>
-        
-        <i class="fas fa-arrow-circle-down arrow down-arrow" onclick="arrow(event,'down')"></i>
-        <i class="fas fa-arrow-circle-up arrow up-arrow" onclick="arrow(event,'up')"></i>
-    </section>
-    
-    <section id="third-container" class="flex-container section--3" data-id=3>
-        <h1>ABOUT ME</h1>
-        <div id="about-me">
-            <div id="slider-refs">
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <noscript>Blin 123</noscript>
 
-            </div>
-            <div id="slider-wrapper">
-                <div id="slider-content">
-                    <div id="general" class="slide --scroll">
-                        <h3>General</h3>
-                        <p>
-                            My name is Goran Čogić.
-                            <br>I was born on October, 1999 in Novi Sad, Serbia.
-                            <br>Since I was born I spent a lot of time in front of computer, perhaps too much.
-                            <br>As a child and teenager, most of my time on computer was spent on video games.
-                            <br>In middle school I got introduced to programming where we studied C and C#.
-                            <br>Thanks to my older brother who finished the same school I went to,
-                            I already had a bit of programming knowledge, just enough to have easy time coding in school,
-                            but I wasn't crazy passionate about it.
-                            <br>The moment I got passion for programming was when I decided
-                            to quit faculty so I could focus most of my attention on it.
-                            <br>Beside spending a lot of time on computer, I also love doing sports,
-                            or any kind of physical activity. Since my early days, I was kinda competitive,
-                            so besides having fun, any activity that I do, I like to be at least good at,
-                            anything more is great, anything less, not so great :D
-                        </p>
-                    </div>
-                    <div id="education" class="slide">
-                            <h3>Education</h3>
-                            <p>this my educate dwqdbqwkdbqkdbqkd
-                                qwkdqdbquwd wqkdbqkwb dqdb adbjqw qwjbdqw bqwdqw
-                            </p>
-                        </div>
-                        <div id="hobbies" class="slide">
-                            <h3>Eta moi hobi</h3>
-                            <p>i like play footebal yes</p>
-                        </div>
-                        <aside class="padding"></aside>
-                        <aside class="padding"></aside>
-                    </div>
-                    
-                    <button id="slider__btn--left" class="slider__btn">
-                        <i class="fas fa-arrow-circle-left slider-arrow"></i>
-                    </button>
-                    <button id="slider__btn--right" class="slider__btn">
-                        <i class="fas fa-arrow-circle-right slider-arrow"></i>
-                    </button>
-                </div>
-            </div>
-            
-        <i class="fas fa-arrow-circle-down arrow down-arrow" onclick="arrow(event,'down')"></i>
-        <i class="fas fa-arrow-circle-up arrow up-arrow" onclick="arrow(event,'up')"></i>
+    <section id="first-container" class="flex-container section--1" data-id="1">
+      <div id="start-screen">
+        <img src="me.jpg" alt="" />
+        <h1>Goran Cogic</h1>
+        <p>Web Developer</p>
+      </div>
+
+      <i
+        class="fas fa-arrow-circle-down arrow down-arrow"
+        onclick="arrow(event,'down')"
+      ></i>
     </section>
 
-    <section id="fourth-container" class="flex-container section--4" data-id=4>
-        <div id="socials">
-            <a href="https://twitter.com/gocins99" target="_blank" class="fab fa-twitter social"></a>
-            <a href="https://rs.linkedin.com/in/goran-cogic-39573320a" target="_blank" class="fab fa-linkedin social"></a>
-            <a href="https://github.com/AragoK7" target="_blank" class="fab fa-github social"></a>
-            <a href="#" target="_blank" class="fab fa-discord social"></a>
-            <a href="#" target="_blank" class="fas fa-envelope social"></a>
+    <section
+      id="second-container"
+      class="flex-container section--2"
+      data-id="2"
+    >
+      <div id="projects-screen">
+        <h1>MY PROJECTS</h1>
+        <div class="project">
+          <a href="https://aragok7-api-project.herokuapp.com/" target="_blank"
+            >Projekt API</a
+          >
+          <p onclick="toggleShowDescription(event)">...show description...</p>
+          <p class="hidden">sdasdadas</p>
         </div>
-        
-        <i class="fas fa-arrow-circle-up arrow up-arrow" onclick="arrow(event,'up')">
-        </section>
-        
-        <script src="index.js"></script>
-        
-    </body>
+        <div class="project">
+          <a href="https://aragok-gallery.netlify.app/" target="_blank"
+            >Projekt Gallery</a
+          >
+          <p onclick="toggleShowDescription(event)">...show description...</p>
+          <p class="hidden">ayayay</p>
+        </div>
+        <div class="project">
+          <a href="https://aragok-news.herokuapp.com/" target="_blank"
+            >Projekt News</a
+          >
+          <p onclick="toggleShowDescription(event)">...show description...</p>
+          <p class="hidden">ayayay</p>
+        </div>
+      </div>
+
+      <i
+        class="fas fa-arrow-circle-down arrow down-arrow"
+        onclick="arrow(event,'down')"
+      ></i>
+      <i
+        class="fas fa-arrow-circle-up arrow up-arrow"
+        onclick="arrow(event,'up')"
+      ></i>
+    </section>
+
+    <section id="third-container" class="flex-container section--3" data-id="3">
+      <h1>ABOUT ME</h1>
+      <div id="about-me">
+        <div id="slider-refs"></div>
+        <div id="slider-wrapper">
+          <div id="slider-content">
+            <div id="general" class="slide">
+              <h3>General</h3>
+              <p>
+                My name is Goran Čogić.
+                <br />I was born on October, 1999 in Novi Sad, Serbia.
+                <br />Since I was born I spent a lot of time in front of
+                computer, perhaps too much. <br />As a child and teenager, most
+                of my time on computer was spent on video games. <br />In middle
+                school I got introduced to programming where we studied C and
+                C#. <br />Thanks to my older brother who finished the same
+                school I went to, I already had a bit of programming knowledge,
+                just enough to have easy time coding in school, but I wasn't
+                crazy passionate about it. <br />The moment I got passion for
+                programming was when I decided to quit faculty so I could focus
+                most of my attention on it. <br />Beside spending a lot of time
+                on computer, I also love doing sports, or any kind of physical
+                activity. Since my early days, I was kinda competitive, so
+                besides having fun, any activity that I do, I like to be at
+                least good at, anything more is great, anything less, not so
+                great :D
+              </p>
+            </div>
+            <div id="education" class="slide">
+              <h3>Education</h3>
+              <p>
+                this my educate dwqdbqwkdbqkdbqkd qwkdqdbquwd wqkdbqkwb dqdb
+                adbjqw qwjbdqw bqwdqw
+              </p>
+            </div>
+            <div id="hobbies" class="slide">
+              <h3>Eta moi hobi</h3>
+              <p>i like play footebal yes</p>
+            </div>
+            <aside class="padding"></aside>
+            <aside class="padding"></aside>
+          </div>
+
+          <button id="slider__btn--left" class="slider__btn">
+            <i class="fas fa-arrow-circle-left slider-arrow"></i>
+          </button>
+          <button id="slider__btn--right" class="slider__btn">
+            <i class="fas fa-arrow-circle-right slider-arrow"></i>
+          </button>
+        </div>
+      </div>
+
+      <i
+        class="fas fa-arrow-circle-down arrow down-arrow"
+        onclick="arrow(event,'down')"
+      ></i>
+      <i
+        class="fas fa-arrow-circle-up arrow up-arrow"
+        onclick="arrow(event,'up')"
+      ></i>
+    </section>
+
+    <section
+      id="fourth-container"
+      class="flex-container section--4"
+      data-id="4"
+    >
+      <div id="socials">
+        <a
+          href="https://twitter.com/gocins99"
+          target="_blank"
+          class="fab fa-twitter social"
+        ></a>
+        <a
+          href="https://rs.linkedin.com/in/goran-cogic-39573320a"
+          target="_blank"
+          class="fab fa-linkedin social"
+        ></a>
+        <a
+          href="https://github.com/AragoK7"
+          target="_blank"
+          class="fab fa-github social"
+        ></a>
+        <a href="#" target="_blank" class="fab fa-discord social"></a>
+        <a href="#" target="_blank" class="fas fa-envelope social"></a>
+      </div>
+
+      <i
+        class="fas fa-arrow-circle-down arrow down-arrow"
+        onclick="arrow(event,'down')"
+      ></i>
+      <i
+        class="fas fa-arrow-circle-up arrow up-arrow"
+        onclick="arrow(event,'up')"
+      ></i>
+    </section>
+
+    <section id="fifth-container" class="flex-container section--5" data-id="5">
+      <h1>SKILLSET</h1>
+      <div id="skillset"></div>
+
+      <i
+        class="fas fa-arrow-circle-up arrow up-arrow"
+        onclick="arrow(event,'up')"
+      ></i>
+    </section>
+
+    <script src="index.js"></script>
+  </body>
 </html>
