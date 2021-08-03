@@ -15,10 +15,10 @@
   </head>
   <body>
     <noscript>Blin 123</noscript>
-
+    <!-- HOME CONTAINER -->
     <section id="first-container" class="flex-container section--1" data-id="1">
       <div id="start-screen">
-        <img src="me.jpg" alt="" />
+        <img src="images/me.jpg" alt="" />
         <h1>Goran Cogic</h1>
         <p>Web Developer</p>
       </div>
@@ -28,34 +28,34 @@
         onclick="arrow(event,'down')"
       ></i>
     </section>
-
+    <!-- MY PROJECTS CONTAINER -->
     <section
       id="second-container"
       class="flex-container section--2"
       data-id="2"
     >
+      <h1>MY PROJECTS</h1>
       <div id="projects-screen">
-        <h1>MY PROJECTS</h1>
         <div class="project">
           <a href="https://aragok7-api-project.herokuapp.com/" target="_blank"
             >Projekt API</a
           >
-          <p onclick="toggleShowDescription(event)">...show description...</p>
           <p class="hidden">sdasdadas</p>
+          <p onclick="toggleShowDescription(event)">...show description...</p>
         </div>
         <div class="project">
           <a href="https://aragok-gallery.netlify.app/" target="_blank"
             >Projekt Gallery</a
           >
-          <p onclick="toggleShowDescription(event)">...show description...</p>
           <p class="hidden">ayayay</p>
+          <p onclick="toggleShowDescription(event)">...show description...</p>
         </div>
         <div class="project">
           <a href="https://aragok-news.herokuapp.com/" target="_blank"
             >Projekt News</a
           >
-          <p onclick="toggleShowDescription(event)">...show description...</p>
           <p class="hidden">ayayay</p>
+          <p onclick="toggleShowDescription(event)">...show description...</p>
         </div>
       </div>
 
@@ -68,8 +68,59 @@
         onclick="arrow(event,'up')"
       ></i>
     </section>
+    <!-- SKILLSET CONTAINER -->
+    <section
+      id="third-container"
+      class="flex-container section--3 background--size"
+      data-id="3"
+    >
+      <h1>SKILLSET</h1>
+      <div id="skillset">
+        <div class="skill">
+          <img src="images/logo-html5.png" alt="html5" />
+          HTML
+        </div>
+        <div class="skill">
+          <img src="images/logo-css3.png" alt="css3" />
+          CSS
+        </div>
+        <div class="skill">
+          <img src="images/logo-js.png" alt="JavaScript" />
+          JavaScript
+        </div>
+        <div class="skill">
+          <img src="images/logo-reactjs.png" alt="ReactJS" />
+          ReactJS
+        </div>
+        <div class="skill">
+          <img src="images/logo-nodejs.png" alt="NodeJS" />
+          NodeJS
+        </div>
+        <div class="skill">
+          <img src="images/logo-mysql.png" alt="MySQL" />
+          MySQL
+        </div>
+        <div class="skill">
+          <img src="images/logo-mongodb.png" alt="MongoDB" />
+          MongoDB
+        </div>
+      </div>
 
-    <section id="third-container" class="flex-container section--3" data-id="3">
+      <i
+        class="fas fa-arrow-circle-down arrow down-arrow"
+        onclick="arrow(event,'down')"
+      ></i>
+      <i
+        class="fas fa-arrow-circle-up arrow up-arrow"
+        onclick="arrow(event,'up')"
+      ></i>
+    </section>
+    <!-- ABOUT ME CONTAINER -->
+    <section
+      id="fourth-container"
+      class="flex-container section--4"
+      data-id="4"
+    >
       <h1>ABOUT ME</h1>
       <div id="about-me">
         <div id="slider-refs"></div>
@@ -108,8 +159,6 @@
               <h3>Eta moi hobi</h3>
               <p>i like play footebal yes</p>
             </div>
-            <aside class="padding"></aside>
-            <aside class="padding"></aside>
           </div>
 
           <button id="slider__btn--left" class="slider__btn">
@@ -130,12 +179,8 @@
         onclick="arrow(event,'up')"
       ></i>
     </section>
-
-    <section
-      id="fourth-container"
-      class="flex-container section--4"
-      data-id="4"
-    >
+    <!-- SOCIALS CONTAINER -->
+    <section id="fifth-container" class="flex-container section--5" data-id="5">
       <div id="socials">
         <a
           href="https://twitter.com/gocins99"
@@ -155,20 +200,6 @@
         <a href="#" target="_blank" class="fab fa-discord social"></a>
         <a href="#" target="_blank" class="fas fa-envelope social"></a>
       </div>
-
-      <i
-        class="fas fa-arrow-circle-down arrow down-arrow"
-        onclick="arrow(event,'down')"
-      ></i>
-      <i
-        class="fas fa-arrow-circle-up arrow up-arrow"
-        onclick="arrow(event,'up')"
-      ></i>
-    </section>
-
-    <section id="fifth-container" class="flex-container section--5" data-id="5">
-      <h1>SKILLSET</h1>
-      <div id="skillset"></div>
 
       <i
         class="fas fa-arrow-circle-up arrow up-arrow"

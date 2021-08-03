@@ -18,7 +18,7 @@
 
   /* font-family: Arial, Helvetica, sans-serif; */
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  /* Third Container */
+  /* fourth Container */
   --button-width: 30px;
 }
 *,
@@ -29,6 +29,7 @@
   box-sizing: border-box;
 }
 body {
+  background-color: var(--primary-color);
   text-align: center;
   color: var(--tertiary-color);
 }
@@ -111,6 +112,7 @@ body {
 
 #second-container {
   background-color: var(--primary-color);
+  flex-direction: column;
 }
 #second-container h1 {
   font-size: 48px;
@@ -132,7 +134,10 @@ body {
   background-color: var(--tertiary-color);
   color: var(--primary-color);
 }
-#second-container p:hover {
+#second-container p:first-of-type {
+  margin-bottom: 8px;
+}
+#second-container p:nth-of-type(2):hover {
   color: var(--tertiary-color);
   cursor: pointer;
 }
@@ -147,27 +152,116 @@ body {
 }
 
 /* /////////////////////////////////////////////////////////////////////////// */
-/*  About Me Display - Third Container */
-
+/* Third Container Skillset */
+.background--size {
+  background-size: 500%;
+}
 #third-container {
   background-color: var(--secondary-color);
   flex-direction: column;
+  color: var(--quaternary-color-opacity-full);
 }
 #third-container h1 {
   color: var(--quaternary-color-opacity-full);
   font-size: 48px;
   margin-bottom: 32px;
 }
-#third-container #about-me {
+#third-container #skillset {
+  border-radius: 8px;
+  padding: 16px;
+  width: 500px;
+  background-color: var(--primary-color);
+  background-size: inherit;
+}
+#third-container .skill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: inherit;
+  font-size: 48px;
+  padding: 2px 0;
+  margin-bottom: 2px;
+  background-size: inherit;
+  background-position: right;
+  transition: background-size 0.5s;
+}
+#third-container img {
+  height: fit-content;
+  max-height: 57px;
+  margin-right: 8px;
+}
+#third-container .skill:nth-of-type(1) {
+  background-image: linear-gradient(
+    100deg,
+    var(--grayish-color) 70%,
+    var(--secondary-color) 75%
+  );
+}
+#third-container .skill:nth-of-type(2) {
+  background-image: linear-gradient(
+    100deg,
+    var(--grayish-color) 70%,
+    var(--secondary-color) 75%
+  );
+}
+#third-container .skill:nth-of-type(3) {
+  background-image: linear-gradient(
+    100deg,
+    var(--grayish-color) 70%,
+    var(--secondary-color) 75%
+  );
+}
+#third-container .skill:nth-of-type(4) {
+  background-image: linear-gradient(
+    100deg,
+    var(--grayish-color) 40%,
+    var(--secondary-color) 45%
+  );
+}
+#third-container .skill:nth-of-type(5) {
+  background-image: linear-gradient(
+    100deg,
+    var(--grayish-color) 30%,
+    var(--secondary-color) 35%
+  );
+}
+#third-container .skill:nth-of-type(6) {
+  background-image: linear-gradient(
+    100deg,
+    var(--grayish-color) 25%,
+    var(--secondary-color) 30%
+  );
+}
+#third-container .skill:nth-of-type(7) {
+  background-image: linear-gradient(
+    100deg,
+    var(--grayish-color) 20%,
+    var(--secondary-color) 25%
+  );
+}
+/* /////////////////////////////////////////////////////////////////////////// */
+/*  About Me Display - Fourth Container */
+
+#fourth-container {
+  background-color: var(--secondary-color);
+  flex-direction: column;
+}
+#fourth-container h1 {
+  color: var(--quaternary-color-opacity-full);
+  font-size: 48px;
+  margin-bottom: 32px;
+}
+#fourth-container #about-me {
   position: relative;
   border-radius: 8px;
   width: 700px;
 }
-#third-container #slider-refs {
+#fourth-container #slider-refs {
   display: flex;
   justify-content: center;
 }
-#third-container .dot-ref {
+#fourth-container .dot-ref {
   background-color: var(--grayish-color);
   border-width: 0;
   border-radius: 50%;
@@ -175,77 +269,71 @@ body {
   height: 20px;
   margin: 4px 4px;
 }
-#third-container .dot-ref:hover {
+#fourth-container .dot-ref:hover {
   background-color: var(--quaternary-color-opacity-middle);
 }
-#third-container .active-ref {
+#fourth-container .active-ref {
   font-size: 30px;
   background-color: var(--quaternary-color-opacity-full);
 }
-#third-container #slider-wrapper {
+#fourth-container #slider-wrapper {
   color: var(--secondary-color);
   height: 300px;
   position: relative;
   border-radius: 8px;
   overflow: hidden;
 }
-#third-container #slider-content {
+#fourth-container #slider-content {
   background-color: var(--primary-color);
   position: relative;
   color: var(--tertiary-color);
   width: 100%;
   height: inherit;
 }
-#third-container p {
+#fourth-container p {
   text-align: justify;
   line-height: 1.4;
   font-family: Arial, Helvetica, sans-serif;
 }
-#third-container h3 {
+#fourth-container h3 {
   font-size: 24px;
   text-align: center;
   margin-bottom: 4px;
 }
-#third-container .padding {
-  position: absolute;
-  left: 0;
-  height: 16px;
-  width: 100%;
-  z-index: 2;
-  background-color: inherit;
-}
-#third-container .padding:first-of-type {
-  top: 0;
-}
-#third-container .padding:last-of-type {
-  bottom: 0;
-}
-#third-container .slide {
+#fourth-container .slide {
   padding: 0 8px 0 calc(var(--button-width) + 10px);
   position: absolute;
   width: calc(100% - var(--button-width) - 2px);
   height: 268px;
-  overflow-y: auto;
   top: 16px;
   left: 0;
+  overflow-y: auto;
   transition: transform 0.75s;
 }
-#third-container ::-webkit-scrollbar {
+#fourth-container .slide {
+  /* Firefox only scrollbar style */
+  scrollbar-color: var(--quaternary-color-opacity-middle)
+    var(--quaternary-color-opacity-lower);
+  scrollbar-width: thin;
+}
+/* SCROLLBAR ONLY */
+#fourth-container .slide::-webkit-scrollbar {
   width: 6px;
 }
-#third-container ::-webkit-scrollbar-track {
+#fourth-container .slide::-webkit-scrollbar-track {
   background-color: var(--quaternary-color-opacity-lower);
   border-radius: 10px;
 }
-#third-container ::-webkit-scrollbar-thumb {
+#fourth-container .slide::-webkit-scrollbar-thumb {
   background-color: var(--quaternary-color-opacity-middle);
   opacity: 0.4;
   border-radius: 4px;
 }
-#third-container ::-webkit-scrollbar-thumb:hover {
+#fourth-container .slide::-webkit-scrollbar-thumb:hover {
   background: var(--quaternary-color-opacity-full);
 }
-#third-container .slider__btn {
+/* ////// */
+#fourth-container .slider__btn {
   background-color: var(--grayish-color);
   border: 0;
   font-size: 24px;
@@ -258,60 +346,44 @@ body {
   transition: opacity var(--time-one-quarter-second);
   z-index: 3;
 }
-#third-container #slider__btn--left {
+#fourth-container #slider__btn--left {
   left: 0;
 }
-#third-container #slider__btn--right {
+#fourth-container #slider__btn--right {
   right: 0;
 }
-#third-container .slider__btn:hover {
+#fourth-container .slider__btn:hover {
   opacity: 1;
 }
 /* /////////////////////////////////////////////////////////////////////////// */
-/* Empty - Fourth Container */
+/* Socials - Fifth Container */
 
-#fourth-container {
+#fifth-container {
   background-color: var(--primary-color);
 }
-#fourth-container #socials {
+#fifth-container #socials {
   position: relative;
   background-color: white;
   font-size: 72px;
 }
-#fourth-container a {
+#fifth-container a {
   position: absolute;
   display: block;
   text-decoration: none;
   color: var(--quaternary-color-opacity-middle);
   transition: transform 0.6s, font-size 0.5s;
 }
-#fourth-container a:hover {
+#fifth-container a:hover {
   font-size: 96px;
   color: var(--quaternary-color-opacity-full);
 }
-/* /////////////////////////////////////////////////////////////////////////// */
-/* Fifth Container Skillset */
 
-#fifth-container {
-  background-color: var(--secondary-color);
-  flex-direction: column;
-}
-#fifth-container h1 {
-  color: var(--quaternary-color-opacity-full);
-  font-size: 48px;
-  margin-bottom: 32px;
-}
-#fifth-container #skillset {
-  border-radius: 8px;
-  height: 400px;
-  width: 500px;
-  background-color: var(--primary-color);
-}
-
+/* ///////////////////////////////////////////////////////////////// */
 @media screen and (max-width: 720px) {
   .arrow {
     font-size: 32px;
   }
+  /* ////////////////////////////////////////////// */
   #first-container #start-screen img {
     border-width: 4px;
     width: 300px;
@@ -320,6 +392,7 @@ body {
   #first-container h1 {
     margin-top: 4px;
   }
+  /* ////////////////////////////////////////////// */
   #second-container #projects-screen {
     width: 100%;
   }
@@ -329,20 +402,30 @@ body {
   #second-container .project {
     margin: 12px 0;
   }
-  #third-container #about-me {
+  /* ////////////////////////////////////////////// */
+  #third-container img {
+    width: 48px;
+  }
+  #third-container .skill {
+    font-size: 40px;
+  }
+  /* ////////////////////////////////////////////// */
+  #fourth-container #about-me {
     width: 100%;
   }
-  #third-container h1 {
+  #fourth-container h1 {
     font-size: 32px;
     margin-bottom: 16px;
   }
-  #fourth-container #socials {
+  /* ////////////////////////////////////////////// */
+  #fifth-container #socials {
     font-size: 48px;
   }
-  #fourth-container a:hover {
+  #fifth-container a:hover {
     font-size: 64px;
   }
 }
+/* ///////////////////////////////////////////////////////////////// */
 @media screen and (max-width: 520px) {
   #first-container #start-screen img {
     width: 250px;
@@ -351,22 +434,38 @@ body {
   #first-container h1 {
     font-size: 40px;
   }
+  /* ////////////////////////////////////////////// */
   #second-container #projects-screen {
     padding: 12px 64px 12px;
   }
-  #third-container h1 {
+  #second-container a {
+    font-size: 28px;
+  }
+  /* ////////////////////////////////////////////// */
+  #third-container #skillset {
+    width: 100%;
+  }
+  #third-container img {
+    width: 36px;
+  }
+  #third-container .skill {
+    font-size: 30px;
+  }
+  /* ////////////////////////////////////////////// */
+  #fourth-container h1 {
     margin-bottom: 8px;
   }
-  #third-container #slider-wrapper {
+  #fourth-container #slider-wrapper {
     height: 250px;
   }
-  #third-container .slide {
+  #fourth-container .slide {
     height: 218px;
   }
-  #third-container #about-me {
+  #fourth-container #about-me {
     font-size: 14px;
   }
 }
+/* ///////////////////////////////////////////////////////////////// */
 @media screen and (max-width: 420px) {
   #first-container #start-screen img {
     width: 200px;

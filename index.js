@@ -1,8 +1,6 @@
 const sectionCount = document.getElementsByTagName("section").length;
 const allSections = document.getElementsByTagName("section");
 const allArrows = document.getElementsByClassName("arrow");
-console.log(document.querySelectorAll(".arrow").length);
-console.log(allArrows);
 
 function clearArrows() {
   for (const arrow of allArrows) {
@@ -11,10 +9,18 @@ function clearArrows() {
   return false;
 }
 
+function changeBackgroundSize(section) {
+  if (section.dataset.id == 3) {
+    section.style.backgroundSize = "100%";
+  }
+}
+
 const revealSection = function (entries, observer) {
   const [entry] = entries;
   if (entry.isIntersecting) {
     clearArrows();
+    changeBackgroundSize(entry.target);
+    console.log(allSections[2]);
     const sectionArrows = [...entry.target.getElementsByClassName("arrow")];
     sectionArrows.forEach((arrow) => {
       arrow.style.visibility = "visible";
@@ -46,7 +52,7 @@ function toggleShowDescription(event) {
   const showText = "...show description...";
   const hideText = "...hide description...";
   const element = event.target;
-  const toggleElement = event.target.nextElementSibling;
+  const toggleElement = event.target.previousElementSibling;
   if (toggleElement.classList.contains("hidden")) {
     toggleElement.classList.remove("hidden");
     element.innerHTML = hideText;
@@ -67,7 +73,6 @@ const slidesLength = slides.length;
 let currentSlide = 0;
 (function createRefButtons() {
   slides.forEach((slide, i) => {
-    const text = slide.id;
     refContainer.insertAdjacentHTML(
       "beforeend",
       `<button class="slide-ref dot-ref" data-slide="${i}"></button>`
@@ -141,10 +146,6 @@ function updateCircle() {
   angleChange !== 359 ? angleChange++ : (angleChange = 0);
   setTimeout(updateCircle, 200);
 }
-// Timeout because offsetWidth and offsetHeight return nonsensical values otherwise
-// Also elementFromPoint returning nonsense values unless in setTimeout
-// setTimeout(() => {
-// Ill keep comments, it apears that i shouldve put script tag on bottom of html page
 updateCircle();
 clearArrows();
 const height = window.innerHeight / 2;
@@ -152,6 +153,7 @@ const width = window.innerWidth / 2;
 const sectionInCenter = document
   .elementFromPoint(width, height)
   .closest("section");
+changeBackgroundSize(sectionInCenter);
 const sectionArrows = [...sectionInCenter.getElementsByClassName("arrow")];
 sectionArrows.forEach((arrow) => {
   arrow.style.visibility = "visible";
