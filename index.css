@@ -16,9 +16,7 @@
   --secondary-color-alpha--before: hsla(0, 0%, 5%, 0.5);
   --secondary-color-alpha--after: hsla(0, 0%, 40%, 0.5);
 
-  /* font-family: Arial, Helvetica, sans-serif; */
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  /* fourth Container */
   --button-width: 30px;
 }
 *,
@@ -89,12 +87,16 @@ body {
   color: var(--quaternary-color-opacity-full);
 }
 
+section:nth-of-type(odd) {
+  background-color: var(--primary-color);
+}
+section:nth-of-type(even) {
+  background-color: var(--secondary-color);
+}
+
 /* /////////////////////////////////////////////////////////////////////////// */
 /* Home Display - First Container */
 
-#first-container {
-  background-color: var(--primary-color);
-}
 #first-container h1 {
   margin-top: 16px;
   font-size: 48px;
@@ -111,7 +113,6 @@ body {
 /*  Projects Display - Second Container */
 
 #second-container {
-  background-color: var(--primary-color);
   flex-direction: column;
 }
 #second-container h1 {
@@ -120,7 +121,7 @@ body {
 }
 #second-container a {
   display: inline-block;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   color: var(--tertiary-color);
   padding: 16px;
   margin-bottom: 4px;
@@ -142,10 +143,11 @@ body {
   cursor: pointer;
 }
 #second-container #projects-screen {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: var(--grayish-color);
   padding: 48px 64px 32px;
   border-radius: 8px;
+  margin-top: 8px;
 }
 #second-container .project {
   margin: 24px 0;
@@ -157,9 +159,8 @@ body {
   background-size: 500%;
 }
 #third-container {
-  background-color: var(--secondary-color);
   flex-direction: column;
-  color: var(--quaternary-color-opacity-full);
+  color: var(--quaternary-color-opacity-middle);
 }
 #third-container h1 {
   color: var(--quaternary-color-opacity-full);
@@ -170,7 +171,7 @@ body {
   border-radius: 8px;
   padding: 16px;
   width: 500px;
-  background-color: var(--primary-color);
+  background-color: var(--grayish-color);
   background-size: inherit;
 }
 #third-container .skill {
@@ -184,7 +185,7 @@ body {
   margin-bottom: 2px;
   background-size: inherit;
   background-position: right;
-  transition: background-size 0.5s;
+  transition: background-size 1s;
 }
 #third-container img {
   height: fit-content;
@@ -194,57 +195,56 @@ body {
 #third-container .skill:nth-of-type(1) {
   background-image: linear-gradient(
     100deg,
-    var(--grayish-color) 70%,
-    var(--secondary-color) 75%
+    var(--primary-color) 90%,
+    var(--secondary-color) 92%
   );
 }
 #third-container .skill:nth-of-type(2) {
   background-image: linear-gradient(
     100deg,
-    var(--grayish-color) 70%,
-    var(--secondary-color) 75%
+    var(--primary-color) 70%,
+    var(--secondary-color) 72%
   );
 }
 #third-container .skill:nth-of-type(3) {
   background-image: linear-gradient(
     100deg,
-    var(--grayish-color) 70%,
-    var(--secondary-color) 75%
+    var(--primary-color) 70%,
+    var(--secondary-color) 72%
   );
 }
 #third-container .skill:nth-of-type(4) {
   background-image: linear-gradient(
     100deg,
-    var(--grayish-color) 40%,
-    var(--secondary-color) 45%
+    var(--primary-color) 40%,
+    var(--secondary-color) 42%
   );
 }
 #third-container .skill:nth-of-type(5) {
   background-image: linear-gradient(
     100deg,
-    var(--grayish-color) 30%,
-    var(--secondary-color) 35%
+    var(--primary-color) 30%,
+    var(--secondary-color) 32%
   );
 }
 #third-container .skill:nth-of-type(6) {
   background-image: linear-gradient(
     100deg,
-    var(--grayish-color) 25%,
-    var(--secondary-color) 30%
+    var(--primary-color) 25%,
+    var(--secondary-color) 27%
   );
 }
 #third-container .skill:nth-of-type(7) {
   background-image: linear-gradient(
     100deg,
-    var(--grayish-color) 20%,
-    var(--secondary-color) 25%
+    var(--primary-color) 20%,
+    var(--secondary-color) 22%
   );
 }
 /* /////////////////////////////////////////////////////////////////////////// */
 /*  About Me Display - Fourth Container */
 
 #fourth-container {
-  background-color: var(--secondary-color);
   flex-direction: column;
 }
 #fourth-container h1 {
@@ -258,6 +258,7 @@ body {
   width: 700px;
 }
 #fourth-container #slider-refs {
+  padding-top: 16px;
   display: flex;
   justify-content: center;
 }
@@ -358,9 +359,6 @@ body {
 /* /////////////////////////////////////////////////////////////////////////// */
 /* Socials - Fifth Container */
 
-#fifth-container {
-  background-color: var(--primary-color);
-}
 #fifth-container #socials {
   position: relative;
   background-color: white;

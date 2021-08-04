@@ -1,15 +1,16 @@
-const sectionCount = document.getElementsByTagName("section").length;
 const allSections = document.getElementsByTagName("section");
+const sectionCount = allSections.length;
 const allArrows = document.getElementsByClassName("arrow");
 
+// Hide all arrows on each section
 function clearArrows() {
   for (const arrow of allArrows) {
     arrow.style.visibility = "hidden";
   }
   return false;
 }
-
-function changeBackgroundSize(section) {
+// Required for section skillset background color animation
+function changeSkillsetBackgroundSize(section) {
   if (section.dataset.id == 3) {
     section.style.backgroundSize = "100%";
   }
@@ -19,8 +20,8 @@ const revealSection = function (entries, observer) {
   const [entry] = entries;
   if (entry.isIntersecting) {
     clearArrows();
-    changeBackgroundSize(entry.target);
-    console.log(allSections[2]);
+    changeSkillsetBackgroundSize(entry.target);
+    // Finds and Displays only arrows in section in viewport
     const sectionArrows = [...entry.target.getElementsByClassName("arrow")];
     sectionArrows.forEach((arrow) => {
       arrow.style.visibility = "visible";
@@ -28,6 +29,7 @@ const revealSection = function (entries, observer) {
   }
 };
 
+// Detects when user scrolls into another section tag, triggers revealSection function
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null,
   threshold: 0.8,
@@ -37,6 +39,7 @@ for (let i = 0; i < allSections.length; i++) {
   sectionObserver.observe(allSections[i]);
 }
 
+// Scroll up or down to another section depending on parameters
 function arrow(event, direction) {
   const target = event.target.closest("section").dataset.id;
   let section = event.target.closest("section").dataset.id;
@@ -71,6 +74,7 @@ const btnRight = document.getElementById("slider__btn--right");
 const slides = document.querySelectorAll(".slide");
 const slidesLength = slides.length;
 let currentSlide = 0;
+// IIFE which adds clickable dots(divs) which relate to different slides by data-slide property
 (function createRefButtons() {
   slides.forEach((slide, i) => {
     refContainer.insertAdjacentHTML(
@@ -116,14 +120,16 @@ btnLeft.addEventListener("click", () => {
 });
 
 ////////////////////////////////////////
-// Circular anchors
+// Logic for social sections which makes anchor tags move in a circle
 const socials = document.querySelectorAll(".social");
 const socialsLength = socials.length;
-const angleGap = 360 / socialsLength;
+const angleGap = 360 / socialsLength; //angle difference between two adjacent anchor tags
 let angleChange = 0;
+// Im used to using degrees so function toRadians helps me work easier with angles
 function toRadians(angle) {
   return angle * (Math.PI / 180);
 }
+// Purpose is for responsiveness of the page
 function getRadius(windowWidth) {
   return windowWidth < 720 ? 100 : 150;
 }
@@ -134,6 +140,8 @@ window.addEventListener(
 );
 function updateCircle() {
   socials.forEach((social, i) => {
+    // Get width and height of the anchor tag
+    // offWidth and offHeight are needed to center the element to the wanted position,
     const offWidth = social.offsetWidth / 2;
     const offHeight = social.offsetHeight / 2;
     const degree = toRadians(i * angleGap + angleChange);
@@ -148,14 +156,14 @@ function updateCircle() {
 }
 updateCircle();
 clearArrows();
+// Following assures section arrows are shown and skillset section animation is played on page load if logic is satisfied
 const height = window.innerHeight / 2;
 const width = window.innerWidth / 2;
 const sectionInCenter = document
   .elementFromPoint(width, height)
   .closest("section");
-changeBackgroundSize(sectionInCenter);
+changeSkillsetBackgroundSize(sectionInCenter);
 const sectionArrows = [...sectionInCenter.getElementsByClassName("arrow")];
 sectionArrows.forEach((arrow) => {
   arrow.style.visibility = "visible";
 });
-// }, 100);
