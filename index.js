@@ -39,15 +39,53 @@ for (let i = 0; i < allSections.length; i++) {
   sectionObserver.observe(allSections[i]);
 }
 
+Math.easeOutQuart = function (t, b, c, d) {
+  t /= d;
+  t--;
+  return -c * (t * t * t * t - 1) + b;
+};
+Math.linearTween = function (t, b, c, d) {
+  return (c * t) / d + b;
+};
+Math.easeInQuad = function (t, b, c, d) {
+  t /= d;
+  return c * t * t + b;
+};
+
+function smoothScroll(target) {
+  const targetPosition = target.offsetTop - window.scrollY;
+  const startPosition = window.pageYOffset;
+  const distance = targetPosition - startPosition;
+  const duration = 1000;
+  let startTime = null;
+  let frame = 0;
+  function step(currentTime) {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    console.log(frame);
+    frame++;
+    window.scrollTo(
+      0,
+      Math.easeInQuad(timeElapsed, startPosition, targetPosition, duration)
+    );
+    // As far as i can see, using current time as logic condition ocasionally overshoots the animation by 1 frame
+    if (frame <= 60) window.requestAnimationFrame(step);
+    // console.log(target.getBoundindgClientRect().top, window.pageYOffset);
+  }
+  // debugger;
+  window.requestAnimationFrame(step);
+}
+
 // Scroll up or down to another section depending on parameters
 function arrow(event, direction) {
   const target = event.target.closest("section").dataset.id;
   let section = event.target.closest("section").dataset.id;
   direction === "up" && section !== 1 && section--;
   direction === "down" && section !== sectionCount && section++;
-  document
-    .getElementsByClassName(`section--${section}`)[0]
-    .scrollIntoView({ behavior: "smooth" });
+  // document
+  //   .getElementsByClassName(`section--${section}`)[0]
+  //   .scrollIntoView({ behavior: "smooth" });
+  smoothScroll(document.getElementsByClassName(`section--${section}`)[0]);
   return false;
 }
 
