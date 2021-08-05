@@ -34,6 +34,10 @@ body {
   text-align: center;
   color: var(--tertiary-color);
 }
+h1 {
+  font-size: 64px;
+  color: var(--quaternary-color-opacity-full);
+}
 .flex-container {
   position: relative;
   display: flex;
@@ -100,16 +104,12 @@ section:nth-of-type(even) {
 /* /////////////////////////////////////////////////////////////////////////// */
 /* Home Display - First Container */
 
-#first-container h1 {
-  margin-top: 16px;
-  font-size: 48px;
-}
-
 #first-container #start-screen img {
   border: 8px solid var(--secondary-color);
   border-radius: 50%;
   width: 400px;
   height: 450px;
+  margin-bottom: 16px;
 }
 
 /* /////////////////////////////////////////////////////////////////////////// */
@@ -117,10 +117,6 @@ section:nth-of-type(even) {
 
 #second-container {
   flex-direction: column;
-}
-#second-container h1 {
-  font-size: 48px;
-  color: var(--quaternary-color-opacity-full);
 }
 #second-container a {
   display: inline-block;
@@ -150,7 +146,7 @@ section:nth-of-type(even) {
   color: var(--grayish-color);
   padding: 48px 64px 32px;
   border-radius: 8px;
-  margin-top: 8px;
+  margin-top: 16px;
 }
 #second-container .project {
   margin: 24px 0;
@@ -163,15 +159,10 @@ section:nth-of-type(even) {
 }
 #third-container {
   flex-direction: column;
-  /* color: var(--quaternary-color-opacity-full); */
   color: var(--secondary-color);
 }
-#third-container h1 {
-  color: var(--quaternary-color-opacity-full);
-  font-size: 48px;
-  margin-bottom: 32px;
-}
 #third-container #skillset {
+  margin-top: 16px;
   border-radius: 8px;
   padding: 16px;
   width: 500px;
@@ -250,15 +241,11 @@ section:nth-of-type(even) {
 #fourth-container {
   flex-direction: column;
 }
-#fourth-container h1 {
-  color: var(--quaternary-color-opacity-full);
-  font-size: 48px;
-  margin-bottom: 32px;
-}
 #fourth-container #about-me {
   position: relative;
   border-radius: 8px;
   width: 700px;
+  margin-top: 16px;
 }
 #fourth-container #slider-refs {
   padding-top: 16px;
@@ -384,21 +371,18 @@ section:nth-of-type(even) {
   .arrow {
     font-size: 32px;
   }
+  h1 {
+    font-size: 48px;
+  }
   /* ////////////////////////////////////////////// */
   #first-container #start-screen img {
     border-width: 4px;
     width: 300px;
     height: 336px;
   }
-  #first-container h1 {
-    margin-top: 4px;
-  }
   /* ////////////////////////////////////////////// */
   #second-container #projects-screen {
     width: 100%;
-  }
-  #second-container h1 {
-    font-size: 32px;
   }
   #second-container .project {
     margin: 12px 0;
@@ -426,10 +410,6 @@ section:nth-of-type(even) {
   #fourth-container #about-me {
     width: 100%;
   }
-  #fourth-container h1 {
-    font-size: 32px;
-    margin-bottom: 16px;
-  }
   /* ////////////////////////////////////////////// */
   #fifth-container #socials {
     font-size: 48px;
@@ -440,12 +420,13 @@ section:nth-of-type(even) {
 }
 /* ///////////////////////////////////////////////////////////////// */
 @media screen and (max-width: 520px) {
+  h1 {
+    font-size: 40px;
+  }
+  /* ////////////////////////////////////////////// */
   #first-container #start-screen img {
     width: 250px;
     height: 282px;
-  }
-  #first-container h1 {
-    font-size: 40px;
   }
   /* ////////////////////////////////////////////// */
   #second-container #projects-screen {
@@ -466,9 +447,6 @@ section:nth-of-type(even) {
     margin-bottom: 2px;
   }
   /* ////////////////////////////////////////////// */
-  #fourth-container h1 {
-    margin-bottom: 8px;
-  }
   #fourth-container #slider-wrapper {
     height: 250px;
   }
@@ -481,11 +459,12 @@ section:nth-of-type(even) {
 }
 /* ///////////////////////////////////////////////////////////////// */
 @media screen and (max-width: 420px) {
+  h1 {
+    font-size: 32px;
+  }
+  /* ////////////////////////////////////////////// */
   #first-container #start-screen img {
     width: 200px;
     height: 225px;
-  }
-  #first-container h1 {
-    font-size: 32px;
   }
 }
