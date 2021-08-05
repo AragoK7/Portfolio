@@ -16,6 +16,9 @@
   --secondary-color-alpha--before: hsla(0, 0%, 5%, 0.5);
   --secondary-color-alpha--after: hsla(0, 0%, 40%, 0.5);
 
+  --gradient-bar-color: hsla(50, 100%, 50%, 0.75);
+  --gradient-back-color: hsl(0, 0%, 85%);
+
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   --button-width: 30px;
 }
@@ -156,11 +159,12 @@ section:nth-of-type(even) {
 /* /////////////////////////////////////////////////////////////////////////// */
 /* Third Container Skillset */
 .background--size {
-  background-size: 500%;
+  background-size: 1500%;
 }
 #third-container {
   flex-direction: column;
-  color: var(--quaternary-color-opacity-middle);
+  /* color: var(--quaternary-color-opacity-full); */
+  color: var(--secondary-color);
 }
 #third-container h1 {
   color: var(--quaternary-color-opacity-full);
@@ -188,57 +192,56 @@ section:nth-of-type(even) {
   transition: background-size 1s;
 }
 #third-container img {
-  height: fit-content;
-  max-height: 57px;
+  height: 64px;
   margin-right: 8px;
 }
 #third-container .skill:nth-of-type(1) {
   background-image: linear-gradient(
     100deg,
-    var(--primary-color) 90%,
-    var(--secondary-color) 92%
+    var(--gradient-bar-color) 90%,
+    var(--gradient-back-color) 95%
   );
 }
 #third-container .skill:nth-of-type(2) {
   background-image: linear-gradient(
     100deg,
-    var(--primary-color) 70%,
-    var(--secondary-color) 72%
+    var(--gradient-bar-color) 70%,
+    var(--gradient-back-color) 75%
   );
 }
 #third-container .skill:nth-of-type(3) {
   background-image: linear-gradient(
     100deg,
-    var(--primary-color) 70%,
-    var(--secondary-color) 72%
+    var(--gradient-bar-color) 70%,
+    var(--gradient-back-color) 75%
   );
 }
 #third-container .skill:nth-of-type(4) {
   background-image: linear-gradient(
     100deg,
-    var(--primary-color) 40%,
-    var(--secondary-color) 42%
+    var(--gradient-bar-color) 40%,
+    var(--gradient-back-color) 45%
   );
 }
 #third-container .skill:nth-of-type(5) {
   background-image: linear-gradient(
     100deg,
-    var(--primary-color) 30%,
-    var(--secondary-color) 32%
+    var(--gradient-bar-color) 30%,
+    var(--gradient-back-color) 35%
   );
 }
 #third-container .skill:nth-of-type(6) {
   background-image: linear-gradient(
     100deg,
-    var(--primary-color) 25%,
-    var(--secondary-color) 27%
+    var(--gradient-bar-color) 25%,
+    var(--gradient-back-color) 30%
   );
 }
 #third-container .skill:nth-of-type(7) {
   background-image: linear-gradient(
     100deg,
-    var(--primary-color) 20%,
-    var(--secondary-color) 22%
+    var(--gradient-bar-color) 20%,
+    var(--gradient-back-color) 25%
   );
 }
 /* /////////////////////////////////////////////////////////////////////////// */
@@ -402,10 +405,22 @@ section:nth-of-type(even) {
   }
   /* ////////////////////////////////////////////// */
   #third-container img {
-    width: 48px;
+    height: 72px;
+    max-width: 100%;
+  }
+  #third-container #skillset {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
   }
   #third-container .skill {
     font-size: 40px;
+    width: 48%;
+    margin-bottom: 16px;
+  }
+  #third-container .skill span {
+    display: none;
   }
   /* ////////////////////////////////////////////// */
   #fourth-container #about-me {
@@ -441,13 +456,14 @@ section:nth-of-type(even) {
   }
   /* ////////////////////////////////////////////// */
   #third-container #skillset {
-    width: 100%;
+    padding: 8px 16px;
   }
   #third-container img {
-    width: 36px;
+    height: 48px;
   }
   #third-container .skill {
-    font-size: 30px;
+    width: 100%;
+    margin-bottom: 2px;
   }
   /* ////////////////////////////////////////////// */
   #fourth-container h1 {
