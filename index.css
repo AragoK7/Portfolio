@@ -136,6 +136,7 @@ section:nth-of-type(even) {
 }
 #second-container p:first-of-type {
   margin-bottom: 8px;
+  color: var(--quaternary-color-opacity-middle);
 }
 #second-container p:nth-of-type(2):hover {
   color: var(--tertiary-color);
@@ -144,9 +145,12 @@ section:nth-of-type(even) {
 #second-container #projects-screen {
   background-color: var(--primary-color);
   color: var(--grayish-color);
+  max-height: 500px;
+  max-width: 720px;
   padding: 48px 64px 32px;
   border-radius: 8px;
   margin-top: 16px;
+  overflow-y: auto;
 }
 #second-container .project {
   margin: 24px 0;
@@ -387,6 +391,9 @@ section:nth-of-type(even) {
   /* ////////////////////////////////////////////// */
   #second-container #projects-screen {
     width: 100%;
+    padding: 32px 16px 16px;
+    border-radius: 8px;
+    margin-top: 16px;
   }
   #second-container .project {
     margin: 12px 0;
@@ -434,10 +441,14 @@ section:nth-of-type(even) {
   }
   /* ////////////////////////////////////////////// */
   #second-container #projects-screen {
-    padding: 12px 64px 12px;
+    width: 100%;
+    padding: 12px 6px 12px;
+    border-radius: 8px;
+    margin-top: 16px;
   }
   #second-container a {
     font-size: 28px;
+    padding: 12px;
   }
   /* ////////////////////////////////////////////// */
   #third-container #skillset {
