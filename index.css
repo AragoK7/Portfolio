@@ -29,10 +29,28 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
+html {
+  color: var(--tertiary-color);
+  scrollbar-color: var(--quaternary-color-opacity-middle)
+    var(--quaternary-color-opacity-lower);
+  scrollbar-width: thin;
   background-color: var(--primary-color);
   text-align: center;
-  color: var(--tertiary-color);
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--quaternary-color-opacity-lower);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--quaternary-color-opacity-middle);
+  opacity: 0.4;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--quaternary-color-opacity-full);
 }
 h1 {
   font-size: 64px;
@@ -111,6 +129,10 @@ section:nth-of-type(even) {
   height: 450px;
   margin-bottom: 16px;
 }
+#first-container p {
+  color: var(--quaternary-color-opacity-middle);
+  font-size: 32px;
+}
 
 /* /////////////////////////////////////////////////////////////////////////// */
 /*  Projects Display - Second Container */
@@ -151,6 +173,7 @@ section:nth-of-type(even) {
   border-radius: 8px;
   margin-top: 16px;
   overflow-y: auto;
+  scrollbar-width: thin;
 }
 #second-container .project {
   margin: 24px 0;
@@ -291,9 +314,6 @@ section:nth-of-type(even) {
   letter-spacing: 0.5px;
   font-family: Arial, Helvetica, sans-serif;
 }
-#fourth-container br {
-  margin-bottom: 10px;
-}
 #fourth-container h3 {
   font-size: 24px;
   text-align: center;
@@ -308,15 +328,10 @@ section:nth-of-type(even) {
   left: 0;
   overflow-y: auto;
   transition: transform 0.75s;
-}
-#fourth-container .slide {
-  /* Firefox only scrollbar style */
-  scrollbar-color: var(--quaternary-color-opacity-middle)
-    var(--quaternary-color-opacity-lower);
   scrollbar-width: thin;
 }
 /* SCROLLBAR ONLY */
-#fourth-container .slide::-webkit-scrollbar {
+/* #fourth-container .slide::-webkit-scrollbar {
   width: 6px;
 }
 #fourth-container .slide::-webkit-scrollbar-track {
@@ -330,7 +345,7 @@ section:nth-of-type(even) {
 }
 #fourth-container .slide::-webkit-scrollbar-thumb:hover {
   background: var(--quaternary-color-opacity-full);
-}
+} */
 /* ////// */
 #fourth-container .slider__btn {
   background-color: var(--grayish-color);
@@ -434,10 +449,14 @@ section:nth-of-type(even) {
   h1 {
     font-size: 40px;
   }
+
   /* ////////////////////////////////////////////// */
   #first-container #start-screen img {
     width: 250px;
     height: 282px;
+  }
+  #first-container p {
+    font-size: 16px;
   }
   /* ////////////////////////////////////////////// */
   #second-container #projects-screen {
@@ -450,6 +469,7 @@ section:nth-of-type(even) {
     font-size: 28px;
     padding: 12px;
   }
+
   /* ////////////////////////////////////////////// */
   #third-container #skillset {
     padding: 8px 16px;
@@ -470,6 +490,9 @@ section:nth-of-type(even) {
   }
   #fourth-container #about-me {
     font-size: 14px;
+  }
+  #fourth-container p {
+    letter-spacing: 1px;
   }
 }
 /* ///////////////////////////////////////////////////////////////// */
