@@ -40,7 +40,7 @@ for (let i = 0; i < allSections.length; i++) {
 }
 
 const linearAnimation = (sPos, tPosRelative, frame) =>
-  sPos + (tPosRelative / 60) * frame;
+  sPos + (tPosRelative / 40) * frame;
 
 function smoothScroll(target) {
   const targetPosition = target.offsetTop - window.scrollY;
@@ -49,7 +49,7 @@ function smoothScroll(target) {
   function step() {
     window.scrollTo(0, linearAnimation(startPosition, targetPosition, frame));
     // As far as i can see, using current time as logic condition ocasionally overshoots the animation by 1 frame
-    if (frame < 60) window.requestAnimationFrame(step);
+    if (frame < 40) window.requestAnimationFrame(step);
     frame++;
   }
   window.requestAnimationFrame(step);
