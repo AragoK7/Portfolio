@@ -237,8 +237,8 @@ section:nth-of-type(even) {
 #third-container .skill:nth-of-type(4) {
   background-image: linear-gradient(
     100deg,
-    var(--gradient-bar-color) 40%,
-    var(--gradient-back-color) 45%
+    var(--gradient-bar-color) 20%,
+    var(--gradient-back-color) 25%
   );
 }
 #third-container .skill:nth-of-type(5) {
@@ -251,15 +251,15 @@ section:nth-of-type(even) {
 #third-container .skill:nth-of-type(6) {
   background-image: linear-gradient(
     100deg,
-    var(--gradient-bar-color) 25%,
-    var(--gradient-back-color) 30%
+    var(--gradient-bar-color) 35%,
+    var(--gradient-back-color) 40%
   );
 }
 #third-container .skill:nth-of-type(7) {
   background-image: linear-gradient(
     100deg,
-    var(--gradient-bar-color) 20%,
-    var(--gradient-back-color) 25%
+    var(--gradient-bar-color) 15%,
+    var(--gradient-back-color) 20%
   );
 }
 /* /////////////////////////////////////////////////////////////////////////// */
