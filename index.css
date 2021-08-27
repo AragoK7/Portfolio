@@ -280,6 +280,7 @@ section:nth-of-type(even) {
   justify-content: center;
 }
 #fourth-container .dot-ref {
+  cursor: pointer;
   background-color: var(--grayish-color);
   border-width: 0;
   border-radius: 50%;
@@ -348,6 +349,7 @@ section:nth-of-type(even) {
 } */
 /* ////// */
 #fourth-container .slider__btn {
+  cursor: pointer;
   background-color: var(--grayish-color);
   border: 0;
   font-size: 24px;
