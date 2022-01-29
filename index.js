@@ -10,9 +10,16 @@ function clearArrows() {
   return false;
 }
 // Required for section skillset background color animation
+
+let isSkillsetTriggered = false;
 function changeSkillsetBackgroundSize(section) {
-  if (section.dataset.id == 3) {
-    section.style.backgroundSize = "100%";
+  if (section.dataset.id == 3 && !isSkillsetTriggered) {
+    console.log("triggered");
+    const skills = section.querySelectorAll(".skill div");
+    skills.forEach(skill => {
+      skill.style.width = '100%';
+    });
+    isSkillsetTriggered = true;
   }
 }
 
